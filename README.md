@@ -19,7 +19,7 @@ In this example we use the COCO Captions (COCO) dataset.
 
 We do not distribute datasets because of the license issue.
 Please download the datasets by yourself.
-We use `pyarrow` to serialize the datasets, conversion scripts are located in `vilt/utils/write_*.py`.
+We use `pyarrow` to serialize the datasets, conversion scripts are located in `utils/write_*.py`.
 Please organize the datasets as follows and run `make_arrow` functions to convert the dataset to pyarrow binary file.
 
 
@@ -54,7 +54,7 @@ mpirun -np 4 python runcai.py with data_root=./vilt_data/arrow_coco num_gpus=1 n
 
 
 ## Citation
-If you use any part of this code and pretrained weights for your own purpose, please cite the original [paper](https://arxiv.org/abs/2102.03334).
+If you use any part of this code and pretrained weights for your own purpose, please cite the original papers.
 ```
 @InProceedings{pmlr-v139-kim21k,
   title = 	 {ViLT: Vision-and-Language Transformer Without Convolution or Region Supervision},
@@ -72,5 +72,15 @@ If you use any part of this code and pretrained weights for your own purpose, pl
   abstract = 	 {Vision-and-Language Pre-training (VLP) has improved performance on various joint vision-and-language downstream tasks. Current approaches to VLP heavily rely on image feature extraction processes, most of which involve region supervision (e.g., object detection) and the convolutional architecture (e.g., ResNet). Although disregarded in the literature, we find it problematic in terms of both (1) efficiency/speed, that simply extracting input features requires much more computation than the multimodal interaction steps; and (2) expressive power, as it is upper bounded to the expressive power of the visual embedder and its predefined visual vocabulary. In this paper, we present a minimal VLP model, Vision-and-Language Transformer (ViLT), monolithic in the sense that the processing of visual inputs is drastically simplified to just the same convolution-free manner that we process textual inputs. We show that ViLT is up to tens of times faster than previous VLP models, yet with competitive or better downstream task performance. Our code and pre-trained weights are available at https://github.com/dandelin/vilt.}
 }
 ```
+
+```
+@article{bian2021colossal,
+  title={Colossal-AI: A Unified Deep Learning System For Large-Scale Parallel Training},
+  author={Bian, Zhengda and Liu, Hongxin and Wang, Boxiang and Huang, Haichen and Li, Yongbin and Wang, Chuanrui and Cui, Fan and You, Yang},
+  journal={arXiv preprint arXiv:2110.14883},
+  year={2021}
+}
+```
+
 
 
